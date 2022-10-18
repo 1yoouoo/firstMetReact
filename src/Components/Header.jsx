@@ -1,26 +1,36 @@
 import { React, useRef, useState } from "react";
 
 const Header = ({ onCreate }) => {
-    const inputEl = useRef(null);
+    const inputEl = useRef();
     const [state, setState] = useState({
-        details:""
+        details:"" 
     })
+    const handleChangeState = (e) => {
+        setState({
+            ...state,
+            [e.target.name] : e.target.value
+        })
+    }
 
     const onButtonClick = () => {
         if (inputEl.current.value.length < 3) {
             inputEl.current.focus();
+            return
         }
-        else {
-            onCreate(state.details)
-            alert("저장성공")
-        }
-        setState({
+        onCreate(state.details)
+        alert("저장 성공")
+        setState({ 
             details:""
         })
     };
     return (
         <div>
-            <input ref={inputEl} placeholder="Enter your task"/>
+            <input 
+                name="details"
+                ref={inputEl} 
+                placeholder="Enter your task" 
+                onChange={handleChangeState}
+            />
             <button onClick={() => {
                 onButtonClick();
             }}>Add</button>

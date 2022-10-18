@@ -4,7 +4,10 @@ import Header from "./Components/Header"
 
 function App() {
     const [data, setData] = useState([
-      {details: ""}
+      {
+        details: "",
+        id:""
+    }
     ])
     const dataId = useRef(0)
 
