@@ -21,7 +21,7 @@ function App() {
       <div>
         <h2>To do list</h2>
         <Header onCreate = {onCreate}/>
-        <ItemList data = {data}/>
+        <ItemList newItem = {data}/>
       </div>
     </div>
   );

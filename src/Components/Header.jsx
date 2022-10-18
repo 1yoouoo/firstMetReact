@@ -14,7 +14,9 @@ const Header = ({ onCreate }) => {
             onCreate(state.details)
             alert("저장성공")
         }
-        setState()
+        setState({
+            details:""
+        })
     };
     return (
         <div>

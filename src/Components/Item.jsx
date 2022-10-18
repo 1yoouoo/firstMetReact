@@ -1,13 +1,12 @@
 import { React } from "react";
 
-const Item = ({ newItem }) => {
+const Item = ({ details }) => {
     return (
         <div>
-            <h2>{newItem.details.length}개의 데이터</h2>
             <div>
-                {newItem.map((it) => (
-                <div key={it.id}>{it.details}</div>
-                ))}
+                <span>
+                    설명 : {details}
+                </span>
             </div>
         </div>
     );
